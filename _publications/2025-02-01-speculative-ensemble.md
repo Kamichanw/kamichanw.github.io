@@ -18,7 +18,7 @@ We present **Speculative Ensemble (SE)**, a novel framework that synergizes spec
 
 # 2. Background: From Speculative Decoding to Ensemble Acceleration 
 <div class="figure" id="fig1"> 
-<img src="http://kamichanw.github.io/speculative-ensemble/fig1.png" alt="Paper Figure 1"  />
+<img src="https://kamichanw.github.io/files/speculative-ensemble/fig1.png" alt="Paper Figure 1"  />
 <p>Comparison of (a) vanilla ensemble, (b) speculative decoding, and (c) speculative ensemble. In (b) and (c), each discrete blue block represents a probability calculated by one forward pass of \(\mathcal{M}_q\), while the continuous green block indicates the joint distribution requires only one forward pass of \(\mathcal{M}_p\).</p>
 </div>
 
@@ -56,7 +56,7 @@ u_j \leq \min\left(1, \frac{r_{i+j}(x)}{q_{i+j}(x)}\right)
 
 ### Alternating Proposal Framework 
 <div class="figure" id="fig2"> 
-<img src="http://kamichanw.github.io/speculative-ensemble/fig2.png" alt="Paper Figure 2"  />
+<img src="https://kamichanw.github.io/files/speculative-ensemble/fig2.png" alt="Paper Figure 2"  />
 <p>The sketch of Alternate Proposal Framework. A continuous colored block indicates a single model invocation, with the bonus token highlighted in a red rounded box. Beginning from Step 2, \(\mathcal{M}_q\) and \(\mathcal{M}_p\) are invoked alternately. Each invocation involves both the verification of the current token and the generation of a bonus token. For clarity, we assume that the proposal length for each model is 1 and that all proposed tokens are accepted.</p>
 </div> 
 
@@ -67,7 +67,7 @@ In standard SD, the proposer and verifier are fixed, with one model consistently
 
 ## 3.2 Generalization to \\( n \\)-Model Ensembles  
 <div class="figure" id="fig3"> 
-<img src="http://kamichanw.github.io/speculative-ensemble/fig3.png" alt="Paper Figure 3"  />
+<img src="https://kamichanw.github.io/files/speculative-ensemble/fig3.png" alt="Paper Figure 3"  />
 <p>The sketch of SE in three-model ensemble scenario. 
     The colored boxes represent the stored probability distributions, while the grey boxes represent the discarded ones. Each invocation involves scoring the current proposal tokens and generating a bonus token. For clarity, we assume that the proposal length for each model is 1 and that all proposed tokens are accepted.</p>
 </div> 
