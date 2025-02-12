@@ -6,6 +6,7 @@ permalink: /publication/2025-02-01-speculative-ensemble
 excerpt: 'Speculative Ensemble is a novel framework that accelerates the ensemble of any number of LLMs without sacrificing performance. It could reach 1.11x-2.23x over standard ensemble techniques on two-model or three-model pairs.'
 date: 2025-02-01
 venue: 'Arixv'
+authors: 'Jiale Fu*, Yuchu Jiang*, Junkai Chen, Jiaming Fan, Xin Geng, Xu Yang'
 paperurl: 'https://arxiv.org/abs/2502.01662v1'
 citation: 'Fu J, Jiang Y, Chen J, et al. Speculative Ensemble: Fast Large Language Model Ensemble via Speculation[J]. arXiv preprint arXiv:2502.01662, 2025.'
 ---
@@ -19,7 +20,7 @@ We present **Speculative Ensemble (SE)**, a novel framework that synergizes spec
 # 2. Background: From Speculative Decoding to Ensemble Acceleration 
 <div class="figure" id="fig1"> 
 <img src="https://kamichanw.github.io/files/speculative-ensemble/fig1.png" alt="Paper Figure 1"  />
-<p>Comparison of (a) vanilla ensemble, (b) speculative decoding, and (c) speculative ensemble. In (b) and (c), each discrete blue block represents a probability calculated by one forward pass of \(\mathcal{M}_q\), while the continuous green block indicates the joint distribution requires only one forward pass of \(\mathcal{M}_p\).</p>
+<p><i>Figure 1.</i> Comparison of (a) vanilla ensemble, (b) speculative decoding, and (c) speculative ensemble. In (b) and (c), each discrete blue block represents a probability calculated by one forward pass of \(\mathcal{M}_q\), while the continuous green block indicates the joint distribution requires only one forward pass of \(\mathcal{M}_p\).</p>
 </div>
 
 ## 2.1 Limitations of Vanilla Ensembles  
@@ -57,7 +58,7 @@ u_j \leq \min\left(1, \frac{r_{i+j}(x)}{q_{i+j}(x)}\right)
 ### Alternating Proposal Framework 
 <div class="figure" id="fig2"> 
 <img src="https://kamichanw.github.io/files/speculative-ensemble/fig2.png" alt="Paper Figure 2"  />
-<p>The sketch of Alternate Proposal Framework. A continuous colored block indicates a single model invocation, with the bonus token highlighted in a red rounded box. Beginning from Step 2, \(\mathcal{M}_q\) and \(\mathcal{M}_p\) are invoked alternately. Each invocation involves both the verification of the current token and the generation of a bonus token. For clarity, we assume that the proposal length for each model is 1 and that all proposed tokens are accepted.</p>
+<p><i>Figure 2.</i> The sketch of Alternate Proposal Framework. A continuous colored block indicates a single model invocation, with the bonus token highlighted in a red rounded box. Beginning from Step 2, \(\mathcal{M}_q\) and \(\mathcal{M}_p\) are invoked alternately. Each invocation involves both the verification of the current token and the generation of a bonus token. For clarity, we assume that the proposal length for each model is 1 and that all proposed tokens are accepted.</p>
 </div> 
 
 In standard SD, the proposer and verifier are fixed, with one model consistently serving as the proposer and the other as the verifier, which fails to fully leverage the bonus token. In SD, when all tokens from the proposal model are accepted by the target model, the target model will naturally generate an additional token, referred to as the **bonus token**. However, since the bonus token is drawn from the target model's distribution rather than the ensemble distribution, it cannot be directly appended to the ensemble output. Therefore, we propose an alternative approach: treating the bonus token as a proposal from the target model, which is then verified by the proposer model. This insight leads to the development of a more efficient framework, the **Alternate Proposal Framework**, illustrated in <a href="#fig2">Figure 2</a>:  
@@ -68,7 +69,7 @@ In standard SD, the proposer and verifier are fixed, with one model consistently
 ## 3.2 Generalization to \\( n \\)-Model Ensembles  
 <div class="figure" id="fig3"> 
 <img src="https://kamichanw.github.io/files/speculative-ensemble/fig3.png" alt="Paper Figure 3"  />
-<p>The sketch of SE in three-model ensemble scenario. 
+<p> <i>Figure 3.</i> The sketch of SE in three-model ensemble scenario. 
     The colored boxes represent the stored probability distributions, while the grey boxes represent the discarded ones. Each invocation involves scoring the current proposal tokens and generating a bonus token. For clarity, we assume that the proposal length for each model is 1 and that all proposed tokens are accepted.</p>
 </div> 
 
