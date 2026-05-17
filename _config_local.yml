@@ -1,0 +1,7 @@
+external_sources: []
+
+pagination:
+  enabled: false
+
+imagemagick:
+  enabled: false

@@ -1,0 +1,60 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #fbfaf6; }
+      .frame { fill: #fffdf8; stroke: #d9d4c7; stroke-width: 2; }
+      .soft { fill: #f2efe7; }
+      .ink { fill: #24313d; }
+      .muted { fill: #66707a; }
+      .navy { fill: #234e70; }
+      .teal { fill: #2c7a7b; }
+      .gold { fill: #d69e2e; }
+      .coral { fill: #dd6b5f; }
+      .line { stroke: #24313d; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .dash { stroke: #c9c1b0; stroke-width: 2; stroke-dasharray: 6 8; }
+      text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    </style>
+    <marker id="arrow-dark" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#24313d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="800" height="600" rx="28"/>
+  <rect x="28" y="28" width="744" height="544" rx="24" class="frame"/>
+  <path d="M90 120H710" class="dash"/>
+
+  <text x="92" y="86" font-size="18" font-weight="700" class="muted">Collaborative speculation</text>
+
+  <rect x="84" y="168" width="176" height="124" rx="18" class="soft"/>
+  <rect x="84" y="326" width="176" height="124" rx="18" class="soft"/>
+  <rect x="492" y="214" width="220" height="190" rx="24" class="soft"/>
+  <rect x="520" y="250" width="164" height="18" rx="9" fill="#c8d6e5"/>
+  <rect x="520" y="282" width="138" height="18" rx="9" fill="#9fbad0"/>
+  <rect x="520" y="314" width="112" height="18" rx="9" fill="#7ea3c4"/>
+  <rect x="520" y="346" width="84" height="18" rx="9" fill="#5d88b2"/>
+
+  <text x="112" y="206" font-size="24" font-weight="700" class="ink">Draft A</text>
+  <text x="112" y="364" font-size="24" font-weight="700" class="ink">Draft B</text>
+  <text x="530" y="192" font-size="28" font-weight="700" class="ink">Target LLM</text>
+
+  <rect x="112" y="226" width="112" height="14" rx="7" class="navy"/>
+  <rect x="112" y="248" width="84" height="14" rx="7" fill="#3b82b6"/>
+  <rect x="112" y="270" width="56" height="14" rx="7" fill="#6aa7cf"/>
+
+  <rect x="112" y="384" width="74" height="14" rx="7" class="teal"/>
+  <rect x="112" y="406" width="104" height="14" rx="7" fill="#49a9a6"/>
+  <rect x="112" y="428" width="62" height="14" rx="7" fill="#76c3bd"/>
+
+  <path d="M260 230C340 230 356 250 428 286" class="line" marker-end="url(#arrow-dark)"/>
+  <path d="M260 390C336 390 352 366 428 334" class="line" marker-end="url(#arrow-dark)"/>
+
+  <rect x="310" y="252" width="118" height="36" rx="18" fill="#fff" stroke="#d9d4c7" stroke-width="2"/>
+  <text x="334" y="276" font-size="18" font-weight="700" class="gold">propose</text>
+  <rect x="310" y="318" width="118" height="36" rx="18" fill="#fff" stroke="#d9d4c7" stroke-width="2"/>
+  <text x="344" y="342" font-size="18" font-weight="700" class="coral">verify</text>
+
+  <circle cx="666" cy="186" r="34" fill="#fff7e5" stroke="#e7c46a" stroke-width="2"/>
+  <path d="M648 186L660 198L684 172" stroke="#d69e2e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="92" y="484" width="216" height="46" rx="23" fill="#fff" stroke="#d9d4c7" stroke-width="2"/>
+  <text x="118" y="513" font-size="22" font-weight="700" class="ink">parallel proposal flow</text>
+</svg>

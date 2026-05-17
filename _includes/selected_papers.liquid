@@ -1,0 +1,5 @@
+<div class="publications">
+  {% for item in site.data.selected_publications %}
+    {% bibliography --group_by none --query @*[key={{ item.key }}]* %}
+  {% endfor %}
+</div>

@@ -1,0 +1,17 @@
+ICML:
+  url: https://icml.cc/
+
+AAAI:
+  url: https://aaai.org/conference/aaai/
+
+CVPR:
+  url: https://cvpr.thecvf.com/
+
+ICLR:
+  url: https://iclr.cc/
+
+arXiv:
+  url: https://arxiv.org/
+
+Frontiers:
+  url: https://www.frontiersin.org/journals/physics

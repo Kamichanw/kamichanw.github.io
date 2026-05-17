@@ -1,0 +1,73 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #fbfaf6; }
+      .frame { fill: #fffdf8; stroke: #d9d4c7; stroke-width: 2; }
+      .soft { fill: #f2efe7; }
+      .ink { fill: #24313d; }
+      .muted { fill: #66707a; }
+      .navy { fill: #234e70; }
+      .teal { fill: #2c7a7b; }
+      .gold { fill: #d69e2e; }
+      .plum { fill: #ab4bb3; }
+      .coral { fill: #dd6b5f; }
+      .line { stroke: #24313d; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .dash { stroke: #c9c1b0; stroke-width: 2; stroke-dasharray: 6 8; }
+      text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    </style>
+    <marker id="arrow-me" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#24313d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="800" height="600" rx="28"/>
+  <rect x="28" y="28" width="744" height="544" rx="24" class="frame"/>
+  <path d="M90 120H710" class="dash"/>
+
+  <text x="92" y="86" font-size="18" font-weight="700" class="muted">Mixture-model view of LLM ensembling</text>
+
+  <circle cx="678" cy="84" r="28" fill="#fbf1fc" stroke="#d5afd9" stroke-width="2"/>
+  <path d="M678 62L684 76H699L687 85L692 100L678 91L664 100L669 85L657 76H672L678 62Z" class="plum"/>
+  <rect x="594" y="106" width="168" height="38" rx="19" fill="#fff" stroke="#d5afd9" stroke-width="2"/>
+  <text x="626" y="131" font-size="20" font-weight="700" class="plum">spotlight</text>
+
+  <rect x="84" y="174" width="188" height="174" rx="22" class="soft"/>
+  <rect x="84" y="372" width="188" height="174" rx="22" class="soft"/>
+  <text x="110" y="212" font-size="28" font-weight="700" class="ink">Model p</text>
+  <text x="110" y="410" font-size="28" font-weight="700" class="ink">Model q</text>
+
+  <path d="M116 308H244" class="line"/>
+  <path d="M128 308C146 292 164 248 180 248C198 248 214 294 232 308" stroke="#234e70" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="116" y="266" width="44" height="14" rx="7" fill="#c8d6e5"/>
+  <rect x="182" y="226" width="34" height="14" rx="7" fill="#9fbad0"/>
+
+  <path d="M116 506H244" class="line"/>
+  <path d="M128 506C146 492 164 444 180 444C200 444 216 472 232 506" stroke="#2c7a7b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="120" y="474" width="42" height="14" rx="7" fill="#bfe3dc"/>
+  <rect x="188" y="456" width="30" height="14" rx="7" fill="#8dcfc8"/>
+
+  <path d="M272 262C332 262 342 250 388 230" class="line" marker-end="url(#arrow-me)"/>
+  <path d="M272 458C334 458 346 444 388 428" class="line" marker-end="url(#arrow-me)"/>
+
+  <circle cx="452" cy="344" r="92" fill="#fff" stroke="#d9d4c7" stroke-width="2"/>
+  <path d="M452 252V344L528 300" stroke="#24313d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M452 344L396 416" stroke="#d69e2e" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="452" cy="344" r="16" class="ink"/>
+  <text x="386" y="324" font-size="22" font-weight="700" class="ink">Random</text>
+  <text x="394" y="352" font-size="22" font-weight="700" class="ink">select</text>
+  <text x="420" y="386" font-size="18" font-weight="700" class="gold">mixture</text>
+
+  <path d="M544 344C590 344 608 344 646 344" class="line" marker-end="url(#arrow-me)"/>
+
+  <rect x="618" y="246" width="112" height="196" rx="24" fill="#fff" stroke="#d9d4c7" stroke-width="2"/>
+  <text x="642" y="284" font-size="24" font-weight="700" class="ink">Sample</text>
+  <text x="646" y="314" font-size="24" font-weight="700" class="ink">once</text>
+  <rect x="642" y="344" width="62" height="18" rx="9" class="navy"/>
+  <rect x="642" y="374" width="82" height="18" rx="9" class="gold"/>
+  <rect x="642" y="404" width="48" height="18" rx="9" class="coral"/>
+  <circle cx="674" cy="228" r="30" fill="#fbf1fc" stroke="#d5afd9" stroke-width="2"/>
+  <path d="M660 228L670 238L690 218" stroke="#ab4bb3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="220" y="484" width="372" height="46" rx="23" fill="#fff" stroke="#d9d4c7" stroke-width="2"/>
+  <text x="248" y="513" font-size="22" font-weight="700" class="ink">ensemble quality at single-model cost</text>
+</svg>

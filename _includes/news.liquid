@@ -1,0 +1,48 @@
+<div class="news">
+  {% if site.news != blank %}
+    {% assign news_size = site.news | size %}
+    {% assign visible_limit = page.announcements.limit | default: news_size %}
+    <div
+      class="table-responsive"
+      {% if include.limit and page.announcements.scrollable and news_size > visible_limit %}
+        style="max-height: calc({{ visible_limit }} * 2.7rem); overflow-y: auto;"
+      {% endif %}
+    >
+      <table class="table table-sm table-borderless">
+        {% assign news = site.news | reverse %}
+        {% if include.limit and page.announcements.limit and page.announcements.scrollable %}
+          {% assign news_limit = news_size %}
+        {% elsif include.limit and page.announcements.limit %}
+          {% assign news_limit = page.announcements.limit %}
+        {% else %}
+          {% assign news_limit = news_size %}
+        {% endif %}
+        {% for item in news limit: news_limit %}
+          {% assign news_date = item.date | date: '%b %d, %Y' %}
+          {% if item.display_date %}
+            {% assign news_date = item.display_date %}
+          {% endif %}
+          <tr>
+            <th scope="row" style="width: 20%">{{ news_date }}</th>
+            <td>
+              <div class="news-entry">
+                <span class="news-icon">
+                  <i class="{% if item.icon %}{{ item.icon }}{% else %}fa-regular fa-circle-dot{% endif %}"></i>
+                </span>
+                <span class="news-copy">
+                  {% if item.inline %}
+                    {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+                  {% else %}
+                    <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                  {% endif %}
+                </span>
+              </div>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  {% else %}
+    <p>No news so far...</p>
+  {% endif %}
+</div>

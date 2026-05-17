@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Jekyll: install dependencies",
+      "type": "shell",
+      "command": "bundle config set path vendor/bundle && bundle install",
+      "problemMatcher": []
+    },
+    {
+      "label": "Jekyll: serve with LiveReload",
+      "type": "shell",
+      "command": "./preview.sh",
+      "group": "build",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "jekyll",
+        "pattern": {
+          "regexp": "^(.*)$",
+          "message": 1
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*Generating\\.\\.\\..*",
+          "endsPattern": ".*Server running\\.\\.\\..*"
+        }
+      }
+    }
+  ]
+}

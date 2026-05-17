@@ -1,33 +1,25 @@
 ---
+layout: about
+title: about
 permalink: /
-title: ""
-author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
+subtitle: Master's student at Southeast University and PALM Lab
+
+profile:
+  align: right
+  image: yuchu-jiang.png
+  image_circular: false
+  more_info: >
+    <p>Nanjing, China</p>
+
+announcements:
+  enabled: true
+  limit: 6
+  scrollable: true
+
+selected_papers: true
+social: true
 ---
 
-# About Me
-I am currently a first-year master's student at the PALM lab, Department of Computer Science, Southeast University (SEU), China. My research interests are broad, with a primary focus on inference acceleration, diffusion large language models and post training techniques. I enjoy developing elegant works and continually exploring new knowledge.
+I am Yuchu Jiang, a Master's student at [Southeast University](https://www.seu.edu.cn/)'s PALM Lab, advised by [Prof. Xu Yang](https://yangxuntu.github.io/). My research interests are broad, with a primary focus on inference acceleration, diffusion large language models, and post-training techniques. I enjoy developing elegant works and continually exploring new knowledge.
 
-Outside of my academic work, I have a strong interest in neuroscience, particularly in understanding how the brain processes information and how the neural system functions at the biological level. Classical music is another significant part of my life, with a particular focus on symphonies and piano works from the Romantic, Impressionist, and Atonal music periods.
-
-
-# News
-<div style="height: 250px; overflow: auto;">
-<hr>
-<ul>
-<li><strong>[Jan./2026]: </strong> One paper on acceleration of diffusion LLMs was accepted by <a href="https://iclr.cc/">ICLR 2026</a>. </li>
-</ul>
-<hr>
-<ul>
-<li><strong>[Jul./2025]: </strong> Two papers (including one demo track) were accepted by <a href="https://acmmm2025.org/">ACM MM 2025</a>. </li>
-<li><strong>[May/2025]: </strong> I won 1st place in image detection and localization track in the <a href="https://deepfake-workshop-ijcai2025.github.io/main/challenge.html">IJCAI 2025 Deepfake Detection and Localization Challenge</a>. </li>
-<li><strong>[May/2025]: </strong> One paper on speculative decoding was accepted by <a href="https://icml.cc/">ICML 2025</a>. </li>
-<li><strong>[Feb./2025]: </strong> My first paper on multimodal in-context learning was accepted by <a href="https://cvpr.thecvf.com/">CVPR 2025</a>. </li>
-</ul>
-<hr>
-<ul>
-<li><strong>[Aug./2024]: </strong> Start my research career under the supervision of <a href="https://yangxuntu.github.io/">Prof. Xu Yang</a>. </li>
-</ul>
-</div>
+Outside of my academic work, I have a strong interest in neuroscience, particularly in understanding how the brain processes information and how neural systems function at the biological level. Classical music is another significant part of my life, with a particular focus on symphonies and piano works from the Romantic, Impressionist, and Atonal music periods.

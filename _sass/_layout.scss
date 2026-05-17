@@ -1,0 +1,114 @@
+/******************************************************************************
+ * Content
+ ******************************************************************************/
+
+@use "variables" as v;
+
+body {
+  padding-bottom: 70px;
+  color: var(--global-text-color);
+  background-color: var(--global-bg-color);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    scroll-margin-top: 66px;
+  }
+}
+
+body.fixed-top-nav {
+  // Add some padding for the nav-bar.
+  padding-top: 57px;
+}
+
+body.sticky-bottom-footer {
+  // Remove padding below footer.
+  padding-bottom: 0;
+}
+
+.container {
+  max-width: v.$max-content-width;
+}
+
+// Profile
+.profile {
+  img {
+    width: 100%;
+  }
+}
+
+.inline-icon-links {
+  i {
+    width: 1.1rem;
+    margin-left: 0.15rem;
+    text-align: center;
+    color: var(--global-text-color-light);
+  }
+}
+
+.about-page {
+  > .clearfix {
+    margin-bottom: 2.6rem;
+  }
+
+  > h2 {
+    margin-top: 2.8rem;
+    margin-bottom: 1.15rem;
+  }
+
+  > .news,
+  > .publications {
+    margin-bottom: 2.2rem;
+  }
+}
+
+.news-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.news-icon {
+  flex: 0 0 auto;
+  width: 1rem;
+  color: var(--global-theme-color);
+  line-height: 1.6;
+
+  .fa-party-horn {
+    display: inline-block;
+    width: 0.95rem;
+    height: 0.95rem;
+    vertical-align: -0.05rem;
+    background-color: currentColor;
+    mask: url("/assets/img/icons/party-horn.svg") center / contain no-repeat;
+    -webkit-mask: url("/assets/img/icons/party-horn.svg") center / contain no-repeat;
+
+    &::before {
+      content: "";
+    }
+  }
+}
+
+.news-copy {
+  flex: 1 1 auto;
+}
+
+// Content layout uses Bootstrap's grid system with responsive columns
+// Main content flows naturally through container-mt-5 and Bootstrap grid classes
+// See _layouts/default.liquid and _includes/projects.liquid for examples
+
+/******************************************************************************
+ * Publications
+ ******************************************************************************/
+
+// Publications layout is defined in _includes/bib_search.liquid
+// Uses jekyll-scholar for BibTeX parsing and Bootstrap cards for display
+
+/*****************************************************************************
+* Projects
+*****************************************************************************/
+
+// TODO: redefine projects layout.
