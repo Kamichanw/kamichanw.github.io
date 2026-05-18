@@ -230,6 +230,13 @@ defaults:
       sitemap: false
   - scope:
       path: ""
+      type: posts
+    values:
+      layout: post
+      toc:
+        sidebar: left
+  - scope:
+      path: ""
       type: publications
     values:
       layout: page

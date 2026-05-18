@@ -13,6 +13,7 @@ d-byline h3 {
 d-byline a,
 d-article d-byline a {
   color: var(--global-text-color) !important;
+
   &:hover {
     color: var(--global-hover-color) !important;
   }
@@ -20,6 +21,7 @@ d-article d-byline a {
 
 d-article {
   border-top-color: var(--global-divider-color) !important;
+
   p,
   h1,
   h2,
@@ -31,6 +33,7 @@ d-article {
   table {
     color: var(--global-text-color) !important;
   }
+
   h1,
   h2,
   hr,
@@ -39,15 +42,19 @@ d-article {
   table td {
     border-bottom-color: var(--global-divider-color) !important;
   }
+
   a {
     color: var(--global-theme-color) !important;
+
     &:hover {
       color: var(--global-theme-color) !important;
     }
   }
+
   b i {
     display: inline;
   }
+
   blockquote {
     border-left: 2px solid var(--global-theme-color) !important;
   }
@@ -65,9 +72,11 @@ d-article {
     grid-column: text;
     overflow: auto;
     max-width: 100%;
+
     summary {
       color: var(--global-theme-color);
     }
+
     p {
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
@@ -88,22 +97,25 @@ d-article {
     margin-top: 0em;
     display: grid;
     grid-template-columns:
-      minmax(8px, 1fr) [toc] auto
-      minmax(8px, 1fr) [toc-line] 1px
-      minmax(32px, 2fr);
+      minmax(8px, 1fr) [toc] auto minmax(8px, 1fr) [toc-line] 1px minmax(32px, 2fr);
 
     nav {
       grid-column: toc;
+
       a {
-        border-bottom: none !important;
+        text-decoration: none;
+
         &:hover {
-          border-bottom: 1px solid var(--global-text-color) !important;
+          text-decoration: underline;
+          text-decoration-color: var(--global-text-color);
         }
       }
+
       h3 {
         margin-top: 0;
         margin-bottom: 1em;
       }
+
       div {
         display: block;
         outline: none;
@@ -111,19 +123,23 @@ d-article {
         color: rgba(0, 0, 0, 0.8);
         font-weight: bold;
       }
+
       ul {
         padding-left: 1em;
         margin-top: 0;
         margin-bottom: 6px;
         list-style-type: none;
+
         li {
           margin-bottom: 0.25em;
         }
       }
     }
+
     .figcaption {
       line-height: 1.4em;
     }
+
     toc-line {
       border-right: 1px solid var(--global-divider-color);
       grid-column: toc-line;
@@ -132,9 +148,12 @@ d-article {
 
   d-footnote {
     scroll-margin-top: 66px;
-    color: var(--global-theme-color) !important; /* Footnote text color */
+    color: var(--global-theme-color) !important;
+
+    /* Footnote text color */
     &:hover {
-      color: var(--global-hover-color) !important; /* Footnote hover color */
+      color: var(--global-hover-color) !important;
+      /* Footnote hover color */
     }
   }
 
@@ -143,6 +162,7 @@ d-article {
   a.citation {
     /* Target citations within d-cite and also general .citation links */
     color: var(--global-theme-color) !important;
+
     &:hover {
       color: var(--global-hover-color) !important;
     }
@@ -152,14 +172,17 @@ d-article {
 d-appendix {
   border-top-color: var(--global-divider-color) !important;
   color: var(--global-distill-app-color) !important;
+
   h3,
   li,
   span {
     color: var(--global-distill-app-color) !important;
   }
+
   a,
   a.footnote-backlink {
     color: var(--global-distill-app-color) !important;
+
     &:hover {
       color: var(--global-hover-color) !important;
     }
@@ -177,6 +200,7 @@ d-appendix {
       padding-top: 0.5em;
       width: 100%;
       border: 1px solid var(--global-divider-color);
+
       nav {
         grid-column: none;
       }

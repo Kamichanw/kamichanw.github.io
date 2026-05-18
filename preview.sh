@@ -22,6 +22,16 @@ cd "$repo_root"
 
 preview_dest="${PREVIEW_DEST:-${TMPDIR:-/tmp}/kamichanw-github-preview-site}"
 mkdir -p "$preview_dest"
+server_port="${JEKYLL_PORT:-4000}"
+live_reload_port="${LIVERELOAD_PORT:-35729}"
+
+while ss -ltn 2>/dev/null | awk '{print $4}' | grep -qE "[:.]${server_port}$"; do
+  server_port=$((server_port + 1))
+done
+
+while ss -ltn 2>/dev/null | awk '{print $4}' | grep -qE "[:.]${live_reload_port}$"; do
+  live_reload_port=$((live_reload_port + 1))
+done
 
 required_bundler_version="$(
   ruby -e '
@@ -51,11 +61,13 @@ if ! "${bundle_cmd[@]}" check >/dev/null 2>&1; then
 fi
 
 echo "Preview output: $preview_dest"
-echo "Preview URL: http://127.0.0.1:4000"
+echo "Preview URL: http://127.0.0.1:${server_port}"
+echo "LiveReload port: ${live_reload_port}"
 
 exec "${bundle_cmd[@]}" exec jekyll serve \
   --config _config.yml,_config_local.yml \
   --destination "$preview_dest" \
   --host 127.0.0.1 \
-  --port 4000 \
-  --livereload
+  --port "$server_port" \
+  --livereload \
+  --livereload-port "$live_reload_port"

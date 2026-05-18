@@ -180,17 +180,26 @@ html.transition *:after {
 nav[data-toggle="toc"] {
   top: 5rem;
 
-  .nav .nav > li > a {
+  .nav .nav>li>a {
     font-size: 0.75rem;
+    padding-left: 30px;
+    border-left: 1px solid transparent;
+
+    &:hover {
+      padding-left: 30px;
+    }
   }
 
-  .nav > li > a {
+  .nav>li>a {
     color: var(--global-text-color);
     font-size: 0.75rem;
+    padding-left: 20px;
+    border-left: 1px solid transparent;
 
     &:hover {
       color: var(--global-hover-color);
       border-left-color: var(--global-hover-color);
+      padding-left: 20px;
     }
   }
 
@@ -198,16 +207,19 @@ nav[data-toggle="toc"] {
     color: var(--global-theme-color);
     border-left-color: var(--global-theme-color);
     font-size: 0.75rem;
+    padding-left: 20px;
 
     &:hover {
       color: var(--global-hover-color);
       border-left-color: var(--global-hover-color);
+      padding-left: 20px;
     }
   }
 }
 
 /* small screens */
 @media (max-width: 576px) {
+
   /* override stickyness so that the navigation does not follow scrolling */
   nav[data-toggle="toc"] {
     visibility: hidden;
@@ -373,6 +385,7 @@ nav[data-toggle="toc"] {
 }
 
 @media (max-width: 575px) {
+
   .newsletter-form-input,
   .newsletter-form-button,
   .newsletter-loading-button,
@@ -380,6 +393,7 @@ nav[data-toggle="toc"] {
   .newsletter-error {
     font-size: 16px !important;
   }
+
   .newsletter-form-container {
     margin-right: 20px;
     margin-left: 20px;
@@ -403,6 +417,7 @@ nav[data-toggle="toc"] {
 }
 
 .bs-popover-top {
+
   // arrow fill color
   .arrow::after {
     border-top-color: var(--global-bg-color);
@@ -415,6 +430,7 @@ nav[data-toggle="toc"] {
 }
 
 .bs-popover-bottom {
+
   // arrow fill color
   .arrow::after {
     border-bottom-color: var(--global-bg-color);
@@ -471,7 +487,7 @@ swiper-container {
     border-bottom: 2px solid var(--global-text-color);
   }
 
-  .ps-algorithm.with-caption > .ps-line:first-child {
+  .ps-algorithm.with-caption>.ps-line:first-child {
     border-bottom: 2px solid var(--global-text-color);
   }
 }
@@ -498,7 +514,8 @@ ninja-keys::part(ninja-input-wrapper) {
 figure.cover {
   display: inline-block;
   text-align: center;
-  margin: 0.5rem; /* adjust as needed */
+  margin: 0.5rem;
+  /* adjust as needed */
 
   img {
     vertical-align: bottom;
