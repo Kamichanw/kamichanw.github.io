@@ -1,20 +1,20 @@
 // Has to be in the head tag, otherwise a flicker effect will occur.
 
-// Toggle through light, dark, and system theme settings.
+// Toggle directly between the two visible theme modes.
 let toggleThemeSetting = () => {
   let themeSetting = determineThemeSetting();
-  if (themeSetting == "system") {
-    setThemeSetting("light");
-  } else if (themeSetting == "light") {
+  if (themeSetting == "light") {
     setThemeSetting("dark");
   } else {
-    setThemeSetting("system");
+    setThemeSetting("light");
   }
 };
 
 // Change the theme setting and apply the theme.
-let setThemeSetting = (themeSetting) => {
-  localStorage.setItem("theme", themeSetting);
+let setThemeSetting = (themeSetting, persist = true) => {
+  if (persist) {
+    localStorage.setItem("theme", themeSetting);
+  }
 
   document.documentElement.setAttribute("data-theme-setting", themeSetting);
 
@@ -265,36 +265,24 @@ let transTheme = () => {
   }, 500);
 };
 
-// Determine the expected state of the theme toggle, which can be "dark", "light", or
-// "system". Default is "system".
+// Keep theme state aligned with the two navbar icons.
 let determineThemeSetting = () => {
   let themeSetting = localStorage.getItem("theme");
-  if (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") {
-    themeSetting = "system";
+  if (themeSetting != "dark" && themeSetting != "light") {
+    themeSetting = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
   return themeSetting;
 };
 
-// Determine the computed theme, which can be "dark" or "light". If the theme setting is
-// "system", the computed theme is determined based on the user's system preference.
+// Determine the computed theme, which can be "dark" or "light".
 let determineComputedTheme = () => {
-  let themeSetting = determineThemeSetting();
-  if (themeSetting == "system") {
-    const userPref = window.matchMedia;
-    if (userPref && userPref("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    } else {
-      return "light";
-    }
-  } else {
-    return themeSetting;
-  }
+  return determineThemeSetting();
 };
 
 let initTheme = () => {
   let themeSetting = determineThemeSetting();
 
-  setThemeSetting(themeSetting);
+  setThemeSetting(themeSetting, false);
 
   // Add event listener to the theme toggle button.
   document.addEventListener("DOMContentLoaded", function () {
@@ -305,9 +293,11 @@ let initTheme = () => {
     });
   });
 
-  // Add event listener to the system theme preference change.
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
-    applyTheme();
+  // Keep following the system until the user explicitly picks a mode.
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (!localStorage.getItem("theme")) {
+      setThemeSetting(determineThemeSetting(), false);
+    }
   });
 };
 

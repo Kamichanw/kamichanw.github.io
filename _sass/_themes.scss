@@ -43,16 +43,12 @@
   --global-danger-block-text: #600;
   --global-danger-block-title: #c00;
 
-  #light-toggle-system {
-    display: inline-block;
-  }
-
   #light-toggle-dark {
     display: none;
   }
 
   #light-toggle-light {
-    display: none;
+    display: inline-block;
   }
 
   .only-light {
@@ -122,10 +118,6 @@ html[data-theme="dark"] {
 }
 
 html[data-theme-setting="dark"] {
-  #light-toggle-system {
-    display: none;
-  }
-
   #light-toggle-dark {
     display: inline-block;
   }
@@ -141,10 +133,6 @@ html[data-theme-setting="dark"] {
 }
 
 html[data-theme-setting="light"] {
-  #light-toggle-system {
-    display: none;
-  }
-
   #light-toggle-dark {
     display: none;
   }
@@ -152,57 +140,4 @@ html[data-theme-setting="light"] {
   #light-toggle-light {
     display: inline-block;
   }
-}
-
-.fa-half-sun-moon {
-  position: relative;
-  display: inline-block;
-
-  --fa-font: var(--fa-font-solid);
-  speak: none;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  width: 1em;
-  height: 1em;
-}
-
-.fa-half-sun-moon::before,
-.fa-half-sun-moon::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  top: -0.5px;
-  bottom: -0.5px;
-  text-align: center;
-  line-height: 1em;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  font: var(--fa-font);
-}
-
-/* Left half: MOON */
-.fa-half-sun-moon::before {
-  content: "\f111";
-  color: var(--global-text-color);
-  clip-path: polygon(0 0, calc(50% - 0.5px) 0, calc(50% - 0.5px) 100%, 0 100%);
-}
-
-/* Right half: SUN */
-.fa-half-sun-moon::after {
-  content: "\f185";
-  color: var(--global-text-color);
-  clip-path: polygon(calc(50% + 0.5px) 0, 100% 0, 100% 100%, calc(50% + 0.5px) 100%);
-  right: -1.5px; /* slight overflow to avoid right-edge clipping */
-  transform: translateX(-1px); /* visually re-center the sun half */
-}
-
-#light-toggle:hover .fa-half-sun-moon::before {
-  color: var(--global-theme-color);
-}
-
-#light-toggle:hover .fa-half-sun-moon::after {
-  color: var(--global-theme-color);
 }
