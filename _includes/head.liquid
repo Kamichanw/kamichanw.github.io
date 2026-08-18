@@ -75,7 +75,14 @@
   <link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url | bust_file_cache}}">
 {% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
-{% I18n_Headers %}
+{% if page.rendered_lang and page.rendered_lang != site.active_lang %}
+  {% assign default_permalink = page.permalink_lang[site.default_lang] | default: page.url %}
+  <link rel="canonical" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ default_permalink }}"{% endstatic_href %}>
+  <link rel="alternate" hreflang="{{ site.default_lang }}" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ default_permalink }}"{% endstatic_href %}>
+  <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ default_permalink }}"{% endstatic_href %}>
+{% else %}
+  {% I18n_Headers %}
+{% endif %}
 
 {% if site.enable_darkmode %}
   <!-- Dark Mode -->
