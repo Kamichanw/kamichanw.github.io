@@ -1,0 +1,24 @@
+en:
+  news: News
+  latest_posts: Latest Posts
+  selected_publications: Selected Publications
+  published_in: Published in
+  recommended_citation: Recommended citation
+  download_paper: Download Paper
+  min_read: min read
+  no_posts: Posts and research notes will appear here as they are published.
+  date_format: "%b %d, %Y"
+  translation_missing: This page is not yet available in Chinese. The English version is shown instead.
+  footer_prefix: Built with
+zh-CN:
+  news: 动态
+  latest_posts: 最新文章
+  selected_publications: 代表性论文
+  published_in: 发表于
+  recommended_citation: 推荐引用
+  download_paper: 下载论文
+  min_read: 分钟阅读
+  no_posts: 博客文章与研究笔记将在发布后显示于此。
+  date_format: "%Y 年 %-m 月 %-d 日"
+  translation_missing: 此页面暂无中文翻译，当前显示英文内容。
+  footer_prefix: 基于

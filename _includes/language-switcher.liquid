@@ -1,0 +1,19 @@
+{% assign current_lang = site.active_lang | default: site.default_lang %}
+<li class="nav-item">
+  <span class="nav-link" aria-label="Language">
+    {% for language in site.languages %}
+      {% assign language_data = site.data.languages[language] %}
+      {% assign language_url = page.url %}
+      {% if page.permalink_lang and page.permalink_lang[language] %}
+        {% assign language_url = page.permalink_lang[language] %}
+      {% endif %}
+      <a
+        lang="{{ language }}"
+        hreflang="{{ language }}"
+        {% if language == current_lang %}aria-current="page" class="font-weight-bold"{% endif %}
+        title="{{ language_data.label }}"
+        {% static_href %}href="{% if language == site.default_lang %}{{ site.baseurl }}{{ language_url }}{% else %}{{ site.baseurl }}/{{ language }}{{ language_url }}{% endif %}"{% endstatic_href %}
+      >{{ language_data.short_label }}</a>{% unless forloop.last %}<span aria-hidden="true"> / </span>{% endunless %}
+    {% endfor %}
+  </span>
+</li>

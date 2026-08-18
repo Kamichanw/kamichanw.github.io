@@ -2,6 +2,7 @@
 layout: default
 ---
 <div class="post">
+  {% assign locale = site.data.i18n[site.active_lang] %}
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
@@ -43,7 +44,7 @@ layout: default
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">{{ locale.news }}</a>
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
@@ -51,7 +52,7 @@ layout: default
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">{{ locale.latest_posts }}</a>
       </h2>
       {% include latest_posts.liquid %}
     {% endif %}
@@ -59,7 +60,7 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">{{ locale.selected_publications }}</a>
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}
@@ -69,7 +70,7 @@ layout: default
       <div class="social">
         <div class="contact-icons">{% social_links %}</div>
 
-        <div class="contact-note">{{ site.contact_note }}</div>
+        <div class="contact-note">{{ page.contact_note | default: site.contact_note }}</div>
       </div>
     {% endif %}
 

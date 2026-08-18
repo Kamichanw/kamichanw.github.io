@@ -1,11 +1,11 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
-description: publications in reverse chronological order.
+title: 论文
+description: 按时间倒序排列的论文与研究成果。
 nav: true
 nav_order: 2
-lang: en
+lang: zh-CN
 page_id: publications
 ---
 

@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
+gem 'jekyll', '~> 4.4'
 
 # Core plugins that directly affect site building
 group :jekyll_plugins do
+    gem 'jekyll-polyglot', '~> 1.13'
     gem 'jekyll-3rd-party-libraries'
     gem 'jekyll-archives-v2'
     gem 'jekyll-cache-bust'

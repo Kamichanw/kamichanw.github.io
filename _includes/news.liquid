@@ -1,4 +1,5 @@
 <div class="news">
+  {% assign locale = site.data.i18n[site.active_lang] %}
   {% if site.news != blank %}
     {% assign news_size = site.news | size %}
     {% assign visible_limit = page.announcements.limit | default: news_size %}
@@ -18,7 +19,7 @@
           {% assign news_limit = news_size %}
         {% endif %}
         {% for item in news limit: news_limit %}
-          {% assign news_date = item.date | date: '%b %d, %Y' %}
+          {% assign news_date = item.date | date: locale.date_format %}
           {% if item.display_date %}
             {% assign news_date = item.display_date %}
           {% endif %}

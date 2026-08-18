@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ site.lang }}">
+<html lang="{{ site.active_lang | default: site.default_lang }}">
   <!-- Head -->
   <head>
     {% if page.redirect %}
@@ -22,6 +22,7 @@
 
     <!-- Content -->
     <div class="container mt-5{% if page.toc and page.toc.sidebar %} toc-sidebar-layout{% endif %}" role="main">
+      {% include translation-notice.liquid %}
       {% if page.toc and page.toc.sidebar %}
         {% if page.toc.sidebar == 'right' %}
           <div class="row">

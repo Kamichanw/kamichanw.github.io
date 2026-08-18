@@ -1,0 +1,6 @@
+{% if page.rendered_lang and page.rendered_lang != site.active_lang %}
+  {% assign locale = site.data.i18n[site.active_lang] %}
+  <div class="alert alert-secondary py-2" role="status">
+    {{ locale.translation_missing }}
+  </div>
+{% endif %}

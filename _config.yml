@@ -16,6 +16,19 @@ keywords: yuchu jiang, southeast university, palm lab, llm inference, diffusion 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: yuchu-jiang.png # use the profile photo as the site favicon
 
+# Localization
+languages:
+  - en
+  - zh-CN
+default_lang: en
+lang_from_path: true
+parallel_localization: false
+fallback_canonical_to_default_lang: true
+exclude_from_localization:
+  - assets
+  - files
+  - sitemap.xml
+
 url: https://kamichanw.github.io # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
@@ -201,6 +214,7 @@ keep_files:
 
 # Plug-ins
 plugins:
+  - jekyll-polyglot
   - jekyll-3rd-party-libraries
   - jekyll-archives-v2
   - jekyll-cache-bust
@@ -225,6 +239,10 @@ plugins:
 # Sitemap settings
 defaults:
   - scope:
+      path: ""
+    values:
+      lang: en
+  - scope:
       path: "assets"
     values:
       sitemap: false
@@ -243,6 +261,7 @@ defaults:
 
 sass:
   style: compressed
+  sourcemap: never
 
 # -----------------------------------------------------------------------------
 # Jekyll Minifier

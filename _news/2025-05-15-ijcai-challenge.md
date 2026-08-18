@@ -1,5 +1,8 @@
 ---
 date: 2025-05-15
+lang: en
+page_id: news-2025-ijcai-challenge
+permalink: /news/2025-ijcai-challenge/
 inline: true
 icon: fa-party-horn
 ---

@@ -1,10 +1,11 @@
 ---
 layout: default
 permalink: /blog/
-title: blog
+title: 博客
+description: 关于推理加速、扩散大语言模型与智能体强化学习的文章和研究笔记。
 nav: true
 nav_order: 1
-lang: en
+lang: zh-CN
 page_id: blog
 pagination:
   enabled: true
